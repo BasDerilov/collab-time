@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/BasDerilov/collab-time",
   "scripts": {
     "dev": "parcel ./src/index.html",
     "prebuild": "npx rimraf build",
@@ -11,11 +12,10 @@
   "author": "Vasil Derilov & Stoayn Parshev",
   "license": "GPL-3.0",
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.0",
-    "parcel": "^2.7.0"
+    "bootstrap": "^5.2.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.7.0"
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "^2.6.0"
   }
 }
