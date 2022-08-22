@@ -1,0 +1,21 @@
+{
+  "name": "js-lecture-06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "prebuild": "npx rimraf build",
+    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
+  },
+  "author": "Vasil Derilov & Stoayn Parshev",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0",
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0"
+  }
+}
