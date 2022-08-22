@@ -39,34 +39,7 @@ const letter = {
   25: "y",
   26: "z"
 };
-const letter1 = {
-  1: 96,
-  2: 97,
-  3: 98,
-  4: 99,
-  5: 100,
-  6: 101,
-  7: 102,
-  8: 103,
-  9: 104,
-  10: 105,
-  11: 106,
-  12: 107,
-  13: 108,
-  14: 109,
-  15: 110,
-  16: 111,
-  17: 112,
-  18: 113,
-  19: 114,
-  20: 115,
-  21: 116,
-  22: 117,
-  23: 118,
-  24: 119,
-  25: 120,
-  26: 121
-};
+
 function battle() {
   let ppl1Str;
   let ppl1Arr = [];
@@ -74,8 +47,9 @@ function battle() {
   let ppl2Arr = [];
   let play1Letter;
   let play2Letter;
-  let ppl1PowerArray =[];
-  let ppl2PowerArray =[];
+  let ppl1PowerArray = [];
+  let ppl2PowerArray = [];
+  let theWinner;
   console.log("creating string...");
   ppl1Str = creatingStrings();
   ppl2Str = creatingStrings();
@@ -85,25 +59,50 @@ function battle() {
   console.log("Identifying the letters...");
   play1Letter = identifyLetter(ppl1Str, ppl2Arr);
   play2Letter = identifyLetter(ppl2Str, ppl1Arr);
-  console.log(" assign points...")
-  definePower(play1Letter);
+  console.log("Assign points...");
+    ppl1PowerPoint = [...definePower(play1Letter)];
+  ppl2PowerPoint = [...definePower(play2Letter)];
 
-}
-function definePower(string){
-  let result =[];
-  let workArr = string.split("");
+  theWinner = theWinnerIs(ppl1PowerPoint, ppl2PowerPoint);
   
-  console.log(workArr)
+  console.log(theWinner)
+}
+function theWinnerIs(array1, array2){
+  let ppl1PowerPoint =  [...array1];
+  let ppl2PowerPoint =  [...array2];
+  let ppl1 ={ score:0}
+  let ppl2 ={ score:0}
+  let counter =0
+  while(counter<array1.length){
+    if((array1[counter] - array2[counter])>0){
+      ppl1.score +=array1[counter] - array2[counter]
+    }else{
+      ppl2.score +=array2[counter] - array1[counter]
+    }
+    counter++;
+  }
+  if(ppl1.score > ppl2.score){
+    return `The Winner is Player1 with score of ${ppl1.score} vs Player2 with score of ${ppl2.score} `
+  }else if(ppl1.score< ppl2.score){
+    return `The Winner is Player2 with score of ${ppl2.score} vs Player1 with score of ${ppl1.score}`
+  }else{
+    return `The Game id DRAW Player1 with score of ${ppl1.score}vs Player2 with score of ${ppl2.score}`
+  }
+}
+function definePower(string) {
+  let result = [];
+  let workArr = string.split("");
+  let stringLength = string.length;
+  for (let i = 0; i < stringLength; i++) {
+    result.push(Math.ceil((string.charCodeAt(i) + i*5) / 2).toFixed(0));
+  }
+  return result;
 }
 function identifyLetter(string, array) {
-  //ако стойноста на индекс-а от масива (арр[0]='0') === индекса на елемент-а от
-  // стринг-а ('стрингстринг'-> 'с'=[0]),
-  //тогава премахваме елемнта от стринга
-  //докато дължината на стринга е > 16
   let letterArray = string.split("");
   let currentStrElementIndex = 0;
+  let k =0;
   while (letterArray.length > 16) {
-    let k = currentStrElementIndex;
     if (currentStrElementIndex >= 20) {
       k = currentStrElementIndex - 20;
     } else if (currentStrElementIndex >= 10) {
@@ -118,7 +117,7 @@ function identifyLetter(string, array) {
       currentStrElementIndex++;
     }
   }
-  return letterArray.join().replace(/,/g,"");
+  return letterArray.join().replace(/,/g, "");
 }
 function createArrays() {
   let result = [];
@@ -136,5 +135,4 @@ function creatingStrings() {
   }
   return result.join().replace(/,/g, "");
 }
-
 battle();
