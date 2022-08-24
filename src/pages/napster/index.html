@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.scss" />
-    <title>Document</title>
+    <title>Top song chart</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -328,20 +328,16 @@
       </div>
     </div>
     <div
-      class="container position-absolute top-50 start-50 w-50 translate-middle bg-black text-white rounded p-3"
+      class="container position-absolute top-50 start-50 translate-middle bg-black text-white rounded p-3 d-flex justify-content-between"
     >
+      <button id="previous" class="btn btn-secondary" type="button">
+        Prev
+      </button>
       <div
         id="songList"
         class="d-flex flex-directon-column justify-content-center"
       ></div>
-      <button id="previous" class="carousel-control-prev" type="button">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button id="next" class="carousel-control-next" type="button">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <button id="next" class="btn btn-secondary" type="button">Next</button>
     </div>
     <script type="module" src="./index.js"></script>
     <script src="./on-off-bg.js"></script>

@@ -10,24 +10,35 @@ const pages = []
 
 GetMusic().then((data) => {
     GenerateLists(data)
-    RenderSongs(pages[curIndex])
+    RenderSongs(curIndex)
+    console.log(pages)
 })
 
-nextButton.addEventListener('click', () => {
-    curIndex++
-    RenderSongs(curIndex)
+nextButton.addEventListener('click', (event) => {
+    
+    if (curIndex+1 < pages.length) {
+        curIndex++
+        RenderSongs(curIndex)
+        console.log(event)
+    }
 }) 
 
-prevButton,addEventListener('click', () => {
+prevButton.addEventListener('click', (event) => {
     if (curIndex > 0) {
         curIndex--
         RenderSongs(curIndex)
     }
+    console.log(event)
+
 })
 
 function RenderSongs(index) {
+    
+    console.log('Changed to', index)
     container.innerHTML = ''
-    container.appendChild(pages[curIndex])
+    container.appendChild(pages[index])
+    
+
 }
 
 function GeneratePage(songs) {
