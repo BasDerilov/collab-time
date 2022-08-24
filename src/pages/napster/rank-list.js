@@ -7,10 +7,17 @@ async function getData() {
 export async function GetMusic() {
   let data = await getData();
   const artist = [];
-  data.tracks.forEach((element, index) => {
+  data.tracks.forEach((element) => {
     const { artistName, albumName, name, previewURL, ...rest } = element;
-    let artistObj = { artistName:`${artistName}`,albumName:`${albumName}`, name:`${name}`, previewURL:`${previewURL}` };
-    artist.push(artistObj)
+    let artistObj = {
+      artistName: `${artistName}`,
+      albumName: `${albumName}`,
+      name: `${name}`,
+      previewURL: `${previewURL}`
+    };
+    if (artistName && albumName && name && previewURL) {
+      artist.push(artistObj);
+    }
   });
   return artist;
 }
