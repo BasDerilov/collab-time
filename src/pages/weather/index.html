@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container container-fluid">
+      <div class="border bg-light rounded mt-5">
+        <div class="d-flex justify-content-around p-4">
+          <div>
+            <div class="container"><span></span></div>
+            <div class="container m-3">
+              <img
+                width="40"
+                height="40"
+                class="img-fluid"
+                src="./icons/warm.png"
+                alt="Temeprature high"
+              />
+              <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span id="temp"></span>&#8451;
+            </div>
+            <div class="container m-3">
+              <img
+                width="40"
+                height="40"
+                class="img-fluid"
+                src="./icons/hot.png"
+                alt="Temeprature high"
+              />
+              <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span id="tempMax"></span>&#8451;
+            </div>
+            <div class="container m-3">
+              <img
+                width="40"
+                height="40"
+                class="img-fluid"
+                src="./icons/cold.png"
+                alt="Temperature low"
+              />
+              <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span id="tempMin"></span>&#8451;
+            </div>
+            <div class="container m-3">
+              <img
+                width="40"
+                height="40"
+                class="img-fluid"
+                src="./icons/humidity.png"
+                alt="Humidity"
+              />
+              <div class="spinner-grow text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <span id="humidity"></span><span>%</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <img id="status" src="./icons/cold.png" alt="" />
+
+            <p id="desc"></p>
+            <div class="spinner-grow text-info" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
