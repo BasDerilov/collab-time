@@ -23,14 +23,15 @@ async function DisplayWeather() {
   element.tempMax.textContent = Math.round(data.main.temp_max / 10);
   element.humidity.textContent = data.main.humidity;
   element.desc.textContent = data.weather[0].description;
-
-  const imageSource = "./icons/";
+  
+  element.status = document.createElement('i')
+  element.status.classList.add('fa-solid')
 
   const groupId = data.weather[0].id;
   if (groupId === 800) {
-    element.status.src = `${imageSource}800.png`;
+    element.status.classList.add('fa-sun')
   } else if (groupId > 800) {
-    element.status.src = `${imageSource}8.png`;
+    element.status.classList.add('fa-cloud-sun')
   } else if (groupId > 700) {
     element.status.src = `${imageSource}7.png`;
   } else if (groupId > 600) {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/73c0f24bb8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./scss/main.scss" />
     <title>Weather</title>
   </head>
@@ -11,63 +12,39 @@
     <div class="container container-fluid">
       <div class="border bg-light rounded mt-5">
         <div class="d-flex justify-content-around p-4">
-          <div>
+          <div class="fs-3">
             <div class="container"><span></span></div>
             <div class="container m-3">
-              <img
-                width="40"
-                height="40"
-                class="img-fluid"
-                src="./icons/warm.png"
-                alt="Temeprature high"
-              />
+              <i class="fa-solid fa-temperature-half"></i>
               <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
               <span id="temp"></span>&#8451;
             </div>
             <div class="container m-3">
-              <img
-                width="40"
-                height="40"
-                class="img-fluid"
-                src="./icons/hot.png"
-                alt="Temeprature high"
-              />
+              <i class="fa-solid fa-temperature-arrow-up"></i>
               <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
               <span id="tempMax"></span>&#8451;
             </div>
             <div class="container m-3">
-              <img
-                width="40"
-                height="40"
-                class="img-fluid"
-                src="./icons/cold.png"
-                alt="Temperature low"
-              />
+              <i class="fa-solid fa-temperature-arrow-down"></i>
               <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
               <span id="tempMin"></span>&#8451;
             </div>
             <div class="container m-3">
-              <img
-                width="40"
-                height="40"
-                class="img-fluid"
-                src="./icons/humidity.png"
-                alt="Humidity"
-              />
+              <i class="fa-solid fa-droplet"></i>
               <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
               <span id="humidity"></span><span>%</span>
             </div>
           </div>
-          <div class="text-center">
-            <img id="status" src="./icons/cold.png" alt="" />
+          <div class="text-center fs-3">
+            <div id="status"></div>
 
             <p id="desc"></p>
             <div class="spinner-grow text-info" role="status">
