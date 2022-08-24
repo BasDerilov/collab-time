@@ -64,29 +64,30 @@ function battle() {
   ppl2PowerPoint = [...definePower(play2Letter)];
 
   theWinner = theWinnerIs(ppl1PowerPoint, ppl2PowerPoint);
-  
-  console.log(theWinner)
+
+  console.log(theWinner);
 }
-function theWinnerIs(array1, array2){
-  let ppl1PowerPoint =  [...array1];
-  let ppl2PowerPoint =  [...array2];
-  let ppl1 ={ score:0}
-  let ppl2 ={ score:0}
-  let counter =0
-  while(counter<array1.length){
-    if((array1[counter] - array2[counter])>0){
-      ppl1.score +=array1[counter] - array2[counter]
-    }else{
-      ppl2.score +=array2[counter] - array1[counter]
+function theWinnerIs(array1, array2) {
+  // let ppl1PowerPoint = [...array1];
+  // let ppl2PowerPoint = [...array2];
+  let ppl1 = { score: 0 };
+  let ppl2 = { score: 0 };
+  let counter = 0;
+  while (counter < array1.length) {
+        
+    if (array1[counter] - array2[counter] > 0) {
+      ppl1.score += array1[counter] - array2[counter];
+    } else {
+      ppl2.score += array2[counter] - array1[counter];
     }
     counter++;
   }
-  if(ppl1.score > ppl2.score){
-    return `The Winner is Player1 with score of ${ppl1.score} vs Player2 with score of ${ppl2.score} `
-  }else if(ppl1.score< ppl2.score){
-    return `The Winner is Player2 with score of ${ppl2.score} vs Player1 with score of ${ppl1.score}`
-  }else{
-    return `The Game id DRAW Player1 with score of ${ppl1.score}vs Player2 with score of ${ppl2.score}`
+  if (ppl1.score > ppl2.score) {
+    return `The Winner is Player1 with score of ${ppl1.score} vs Player2 with score of ${ppl2.score} `;
+  } else if (ppl1.score < ppl2.score) {
+    return `The Winner is Player2 with score of ${ppl2.score} vs Player1 with score of ${ppl1.score}`;
+  } else {
+    return `The Game id DRAW Player1 with score of ${ppl1.score}vs Player2 with score of ${ppl2.score}`;
   }
 }
 function definePower(string) {
@@ -94,14 +95,14 @@ function definePower(string) {
   let workArr = string.split("");
   let stringLength = string.length;
   for (let i = 0; i < stringLength; i++) {
-    result.push(Math.ceil((string.charCodeAt(i) + i*5) / 2));
+    result.push(Math.ceil((string.charCodeAt(i) + i * 5) / 2));
   }
   return result;
 }
 function identifyLetter(string, array) {
   let letterArray = string.split("");
   let currentStrElementIndex = 0;
-  let k =0;
+  let k = 0;
   while (letterArray.length > 16) {
     if (currentStrElementIndex >= 20) {
       k = currentStrElementIndex - 20;

@@ -4,19 +4,13 @@ async function getData() {
   obj = await fetch(url).then((response) => response.json());
   return obj;
 }
-async function f1() {
+export async function f1() {
   let data = await getData();
   const artist = [];
-  // let trackName  ===name in object
-  // let playMusic ===previewURL in Object
-  // selectedProperty = data.tracks.map(arr=>{
-
-  // })
   data.tracks.forEach((element, index) => {
     const { artistName, albumName, name, previewURL, ...rest } = element;
     let artistObj = { artistName:`${artistName}`,albumName:`${albumName}`, name:`${name}`, previewURL:`${previewURL}` };
     artist.push(artistObj)
   });
-  console.log(artist)
+  return artist;
 }
-f1();
