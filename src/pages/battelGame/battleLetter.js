@@ -60,7 +60,7 @@ function battle() {
   play1Letter = identifyLetter(ppl1Str, ppl2Arr);
   play2Letter = identifyLetter(ppl2Str, ppl1Arr);
   console.log("Assign points...");
-    ppl1PowerPoint = [...definePower(play1Letter)];
+  ppl1PowerPoint = [...definePower(play1Letter)];
   ppl2PowerPoint = [...definePower(play2Letter)];
 
   theWinner = theWinnerIs(ppl1PowerPoint, ppl2PowerPoint);
@@ -94,7 +94,7 @@ function definePower(string) {
   let workArr = string.split("");
   let stringLength = string.length;
   for (let i = 0; i < stringLength; i++) {
-    result.push(Math.ceil((string.charCodeAt(i) + i*5) / 2).toFixed(0));
+    result.push(Math.ceil((string.charCodeAt(i) + i*5) / 2));
   }
   return result;
 }
