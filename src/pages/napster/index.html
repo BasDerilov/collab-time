@@ -328,18 +328,20 @@
       </div>
     </div>
     <div
-      id="songList"
-      class="container position-absolute top-50 start-50 translate-middle bg-black text-white d-flex rounded p-3"
+      class="container position-absolute top-50 start-50 w-50 translate-middle bg-black text-white rounded p-3"
     >
-      <div class="bg-secondary rounded p-3">
-        <h3>Song name</h3>
-        <p class="m-0">Autho: <span>DJ Khaled</span></p>
-        <p class="mt-0">Album: <span>Big ass</span></p>
-        <audio controls>
-          <source
-          src="https://listen.hs.llnwd.net/g3/prvw/2/4/8/0/7/2636470842.mp3"" />
-        </audio>
-      </div>
+      <div
+        id="songList"
+        class="d-flex flex-directon-column justify-content-center"
+      ></div>
+      <button id="previous" class="carousel-control-prev" type="button">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button id="next" class="carousel-control-next" type="button">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
     <script type="module" src="./index.js"></script>
     <script src="./on-off-bg.js"></script>
