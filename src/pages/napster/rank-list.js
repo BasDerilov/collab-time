@@ -4,7 +4,7 @@ async function getData() {
   obj = await fetch(url).then((response) => response.json());
   return obj;
 }
-export async function f1() {
+export async function GetMusic() {
   let data = await getData();
   const artist = [];
   data.tracks.forEach((element, index) => {
